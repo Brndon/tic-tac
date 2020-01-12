@@ -5,8 +5,8 @@ import './index.css';
 class Square extends React.Component {
   render() {
     return (
-      <button 
-	    class="square" 
+      <button
+	    class="square"
 	    onClick={() => this.props.onClick()}
 	    >
             {this.props.value}
@@ -27,18 +27,18 @@ class Board extends React.Component {
     return (
       <Square
         value={this.state.squares[i]}
-	onClick={() => this.handleClick(i)}
+	      /* testGarbagehere */ onClick={() => this.handleClick(i)}
       />
     );
   }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
-    if (i/2=0) 
-	  {squares[i] = 'X'});	
-    else 
+    if (i/2=0)
+	  {squares[i] = 'X'});
+    else
 	  {squares[i] = 'O'};
-    this.setState({squares: squares});	  
+    this.setState({squares: squares});
   }
 
   render() {
@@ -89,4 +89,3 @@ ReactDOM.render(
   <Game />,
   document.getElementById('root')
 );
-
